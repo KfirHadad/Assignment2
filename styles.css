@@ -795,12 +795,12 @@ section {
 /* ---- Stirring spoon — swings from top pivot (z:10) ---- */
 .cooking-scene .spoon-wrap {
     position: absolute;
-    top: 28px;
+    top: 92px;
     left: 50%;
     width: 0;
     height: 0;
     transform-origin: 0 0;
-    animation: spoonSwing 2.4s ease-in-out infinite;
+    animation: spoonSwing 1.6s ease-in-out infinite;
     z-index: 10;
 }
 

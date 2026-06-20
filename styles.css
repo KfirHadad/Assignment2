@@ -614,28 +614,28 @@ section {
 /* Left side flame — outside pot (pot left edge ≈ x:55) */
 .cooking-scene .f1 {
     width: 9px; height: 15px;
-    left: 33px;
+    left: 42px;
     background: linear-gradient(to top,#0008b8, #7bbfff, #00cdff);
     animation-delay: 0s;
 }
 /* Left side flame — outside pot (pot left edge ≈ x:55) */
 .cooking-scene .f2 {
     width: 9px; height: 21px;
-    left: 43px;
+    left: 52px;
     background: linear-gradient(to top,#0008b8, #7bbfff, #00cdff);
     animation-delay: 0.18s;
 }
 /* Right side flame — outside pot (pot right edge ≈ x:145) */
 .cooking-scene .f3 {
     width: 9px; height: 21px;
-    left: 125px;
+    left: 134px;
     background: linear-gradient(to top, #0008b8, #7bbfff, #00cdff);
     animation-delay: 0.08s;
 }
 /* Right side flame — outside pot (pot right edge ≈ x:145) */
 .cooking-scene .f4 {
     width: 9px; height: 15px;
-    left: 135px;
+    left: 144px;
     background: linear-gradient(to top, #0008b8, #7bbfff, #00cdff);
     animation-delay: 0.08s;
 }

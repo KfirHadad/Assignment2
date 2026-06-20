@@ -1,0 +1,1082 @@
+/* =============================================
+   styles.css — Kfir Hadad Personal Website
+   Dark & Modern Theme · Space Grotesk Headings
+============================================= */
+
+/* ----- Reset & Base ----- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-primary:   #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card:      #1c2333;
+    --accent:       #7c3aed;
+    --accent-light: #a78bfa;
+    --text-primary: #e6edf3;
+    --text-muted:   #8b949e;
+    --border:       #30363d;
+    --font-body:    'Inter', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-cursive: 'Dancing Script', cursive;
+    --radius:       12px;
+    --transition:   0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+}
+
+/* =============================================
+   ACCESSIBILITY — Skip Link
+============================================= */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 0 0 8px 8px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 9999;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* =============================================
+   SCROLL-REVEAL SYSTEM
+   Elements with .reveal start hidden.
+   JS adds .visible when they enter the viewport.
+   --delay CSS variable staggers siblings.
+============================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease var(--delay, 0s),
+                transform 0.6s ease var(--delay, 0s);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =============================================
+   NAVBAR
+============================================= */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+    padding: 14px 0;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    letter-spacing: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity var(--transition);
+}
+
+.nav-logo:hover {
+    opacity: 0.8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color var(--transition);
+}
+
+/* Underline slide-in on hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-light);
+    border-radius: 2px;
+    transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-light);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* =============================================
+   HERO
+============================================= */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 24px 72px;
+    background: radial-gradient(ellipse at 50% 0%, #1e0a45 0%, var(--bg-primary) 68%);
+}
+
+.hero-content {
+    margin-bottom: 56px;
+}
+
+.hero-name {
+    font-family: var(--font-cursive);
+    font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 18px;
+    animation: fadeDown 0.8s ease both;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    animation: fadeUp 0.8s ease 0.25s both;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 0.45s both;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(124, 58, 237, 0.38);
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+    border: 2px solid var(--accent);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--accent-light);
+    border: 2px solid var(--accent-light);
+}
+
+/* Hero images */
+.hero-images {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.65s both;
+}
+
+.hero-img {
+    height: 190px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid var(--border);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.07) rotate(-1.5deg);
+    border-color: var(--accent-light);
+    box-shadow: 0 16px 36px rgba(124, 58, 237, 0.32);
+}
+
+.hero-img-mid {
+    transform: translateY(-14px);
+}
+
+.hero-img-mid:hover {
+    transform: translateY(-14px) scale(1.07);
+}
+
+/* =============================================
+   SHARED SECTION STYLES
+============================================= */
+section {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 88px 28px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-bottom: 42px;
+    display: inline-block;
+    position: relative;
+    letter-spacing: -0.3px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 50%;
+    background: linear-gradient(to right, var(--accent), transparent);
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    width: 55%;
+    margin: 0 auto;
+}
+
+/* =============================================
+   ABOUT
+============================================= */
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-size: 1rem;
+}
+
+/* =============================================
+   SKILLS
+============================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 52px;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: transform var(--transition), border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.18);
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.skill-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.skill-level {
+    color: var(--accent-light);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.skill-bar {
+    background-color: var(--border);
+    border-radius: 6px;
+    height: 7px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    width: var(--fill);
+    background: linear-gradient(to right, var(--accent), var(--accent-light));
+    border-radius: 6px;
+    /* Animate width from 0 to --fill when .reveal triggers */
+    animation: growBar 1s ease both;
+    animation-play-state: paused;
+}
+
+/* Start bar animation only once the card is revealed */
+.reveal.visible .skill-fill {
+    animation-play-state: running;
+}
+
+/* Languages */
+.subsection-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.languages-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.language-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: border-color var(--transition), transform var(--transition);
+}
+
+.language-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.language-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.language-level {
+    color: var(--accent-light);
+    font-size: 0.82rem;
+}
+
+/* =============================================
+   EXPERIENCE — TIMELINE
+============================================= */
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 52px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Pulsing glow on timeline dots */
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 7px;
+    width: 13px;
+    height: 13px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+.timeline-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.timeline-org {
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-right: 14px;
+}
+
+.timeline-date {
+    color: var(--text-muted);
+    font-size: 0.83rem;
+}
+
+.timeline-content ul {
+    margin-top: 14px;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.timeline-content ul li {
+    margin-bottom: 7px;
+    font-size: 0.95rem;
+}
+
+/* =============================================
+   EDUCATION
+============================================= */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.education-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform var(--transition), border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.education-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.22);
+}
+
+.edu-icon {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+}
+
+.education-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.edu-school {
+    color: var(--accent-light);
+    font-weight: 600;
+    font-size: 0.88rem;
+}
+
+.edu-date {
+    color: var(--text-muted);
+    font-size: 0.83rem;
+    margin-top: 5px;
+}
+
+/* =============================================
+   HOBBIES
+============================================= */
+.hobbies-container {
+    display: flex;
+    gap: 44px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hobbies-list {
+    flex: 1;
+    min-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hobby-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 20px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: border-color var(--transition), color var(--transition),
+                transform var(--transition);
+}
+
+.hobby-item:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    transform: translateX(9px);
+}
+
+/* =============================================
+   COOKING ANIMATION (Hobbies Section)
+   Pure CSS — no images needed.
+   Elements: pot · lid · handles · steam · spoon
+============================================= */
+.cooking-scene {
+    width: 200px;
+    height: 250px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Ambient fire glow at base of pot */
+.cooking-scene::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255, 130, 0, 0.5) 0%, transparent 70%);
+    animation: glowPulse 1.2s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* ---- Flames (z:3 — side flames visible outside pot width) ---- */
+.cooking-scene .flame {
+    position: absolute;
+    bottom: 20px;         /* just at the pot base level */
+    border-radius: 50% 50% 15% 15%; /* wider base, tapered tip */
+    animation: flicker 0.45s ease-in-out infinite alternate;
+    z-index: 3;
+}
+/* Left side flame — outside pot (pot left edge ≈ x:55) */
+.cooking-scene .f1 {
+    width: 9px; height: 15px;
+    left: 33px;
+    background: linear-gradient(to top,#0008b8, #7bbfff, #00cdff);
+    animation-delay: 0s;
+}
+/* Left side flame — outside pot (pot left edge ≈ x:55) */
+.cooking-scene .f2 {
+    width: 9px; height: 21px;
+    left: 43px;
+    background: linear-gradient(to top,#0008b8, #7bbfff, #00cdff);
+    animation-delay: 0.18s;
+}
+/* Right side flame — outside pot (pot right edge ≈ x:145) */
+.cooking-scene .f3 {
+    width: 9px; height: 21px;
+    left: 125px;
+    background: linear-gradient(to top, #0008b8, #7bbfff, #00cdff);
+    animation-delay: 0.08s;
+}
+/* Right side flame — outside pot (pot right edge ≈ x:145) */
+.cooking-scene .f4 {
+    width: 9px; height: 15px;
+    left: 135px;
+    background: linear-gradient(to top, #0008b8, #7bbfff, #00cdff);
+    animation-delay: 0.08s;
+}
+
+/* ---- Stove surface (z:2) ---- */
+.cooking-scene .stove {
+    position: absolute;
+    bottom: 0;
+    left: 12px; right: 12px;
+    height: 22px;
+    background: linear-gradient(to bottom, #232840, #1a1f30);
+    border-top: 2px solid #3a3f60;
+    border-radius: 0 0 10px 10px;
+    z-index: 2;
+}
+
+/* Burner ring on stove */
+.cooking-scene .stove::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 12px;
+    border: 2px solid #4a4f70;
+    border-radius: 50%;
+}
+
+/* ---- Soup body (z:5 > pot-body z:4)
+   Narrower than pot → pot walls show on both sides, giving a
+   "filled pot" look without any clip-path tricks. ---- */
+.cooking-scene .soup-body {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 74px;   /* narrower than pot (90px) → 8px wall visible each side */
+    height: 65px;
+    background: linear-gradient(to bottom, #c87012 0%, #9a4208 55%, #7a3208 100%);
+    border-radius: 0 0 20px 20px;
+    z-index: 5;
+}
+
+/* ---- Pot body (z:4) — sits above flames, pot walls visible around soup ---- */
+.cooking-scene .pot-body {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 78px;
+    background: linear-gradient(155deg, #3d4470 0%, #252945 60%, #1e2240 100%);
+    border-radius: 5px 5px 24px 24px;
+    border: 2px solid #7c83c0;
+    z-index: 4;
+}
+
+/* Highlight sheen on pot */
+.cooking-scene .pot-body::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 10px;
+    width: 20px; height: 38px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+/* ---- Pot handles (z:6) ---- */
+.cooking-scene .pot-handle {
+    position: absolute;
+    bottom: 72px;
+    width: 18px;
+    height: 12px;
+    background: linear-gradient(to bottom, #363c60, #252940);
+    border: 1.5px solid #6070a0;
+    border-radius: 5px;
+    z-index: 6;
+}
+.cooking-scene .ph-left  { left:  calc(50% - 60px); }
+.cooking-scene .ph-right { right: calc(50% - 60px); }
+
+/* ---- Soup surface (z:7) — visible ellipse at pot opening ---- */
+.cooking-scene .soup-surface {
+    position: absolute;
+    bottom: 86px;    /* 22 stove + ~64 soup body height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 74px;
+    height: 7px;
+    background: radial-gradient(ellipse at 50% 40%, #e08820 0%, #b05c08 55%, #8a4006 100%);
+    border-radius: 50%;
+    z-index: 7;
+    animation: soupRipple 3s ease-in-out infinite;
+}
+
+/* ---- Pot lid — bounces as steam pressure builds (z:8) ---- */
+.cooking-scene .pot-lid {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98px;
+    height: 20px;
+    background: linear-gradient(160deg, #4d5490 0%, #333860 100%);
+    border: 2px solid #a78bfa;
+    border-radius: 50% 50% 0 0;
+    border-bottom: none;
+    z-index: 8;
+    animation: lidBounce 2s ease-in-out infinite;
+}
+
+/* Lid knob */
+.cooking-scene .pot-lid::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #9090d0, #5a60a0);
+    border-radius: 50%;
+    border: 1.5px solid #a0a8e0;
+}
+
+/* ---- Steam wisps — white/off-white, elongated, drift and wobble (z:9) ---- */
+.cooking-scene .steam {
+    position: absolute;
+    opacity: 0;
+    animation: steamRise 2.8s ease-out infinite;
+    z-index: 9;
+}
+.cooking-scene .s1 {
+    width: 7px; height: 22px;
+    bottom: 128px; left: 82px;
+    background: linear-gradient(to top, rgba(255,255,255,0.0), rgba(255, 255, 255, 0.95), rgba(255,255,255,0.0));
+    border-radius: 50%;
+    animation-delay: 0s;
+}
+.cooking-scene .s2 {
+    width: 9px; height: 28px;
+    bottom: 126px; left: 95px;
+    background: linear-gradient(to top, rgba(255,255,255,0.0), rgba(255, 255, 255, 0.7), rgba(255,255,255,0.0));
+    border-radius: 50%;
+    animation-delay: 0.9s;
+}
+.cooking-scene .s3 {
+    width: 7px; height: 20px;
+    bottom: 128px; left: 109px;
+    background: linear-gradient(to top, rgba(255,255,255,0.0), rgba(255, 255, 255, 0.85), rgba(255,255,255,0.0));
+    border-radius: 50%;
+    animation-delay: 1.8s;
+}
+
+/* ---- Stirring spoon — swings from top pivot (z:10) ---- */
+.cooking-scene .spoon-wrap {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: 0 0;
+    animation: spoonSwing 2.4s ease-in-out infinite;
+    z-index: 10;
+}
+
+.cooking-scene .spoon-stick {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 6px;
+    height: 82px;
+    background: linear-gradient(to right, #d4aa55, #b08830);
+    border-radius: 3px;
+}
+
+.cooking-scene .spoon-bowl {
+    position: absolute;
+    top: 82px;
+    left: -9px;
+    width: 18px;
+    height: 14px;
+    background: radial-gradient(ellipse at 40% 35%, #e0bb60, #b07820);
+    border-radius: 50%;
+    border: 1px solid #806010;
+}
+
+/* =============================================
+   CONTACT
+============================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    transition: transform var(--transition), border-color var(--transition),
+                color var(--transition), box-shadow var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    color: var(--text-primary);
+    box-shadow: 0 10px 24px rgba(124, 58, 237, 0.2);
+}
+
+.contact-icon {
+    font-size: 1.9rem;
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+#footer {
+    text-align: center;
+    padding: 36px 24px;
+    color: var(--text-muted);
+    font-size: 0.84rem;
+    border-top: 1px solid var(--border);
+}
+
+/* =============================================
+   BACK TO TOP BUTTON
+============================================= */
+#back-to-top {
+    position: fixed;
+    bottom: 36px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 900;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+    transform: translateY(-3px);
+}
+
+/* =============================================
+   KEYFRAME ANIMATIONS
+============================================= */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Skill bar grows from 0 to the --fill value */
+@keyframes growBar {
+    from { width: 0; }
+    to   { width: var(--fill); }
+}
+
+/* Pulsing glow on timeline dots */
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0  6px 0px var(--accent); }
+    50%       { box-shadow: 0 0 16px 5px var(--accent); }
+}
+
+/* Cooking animation keyframes */
+@keyframes glowPulse {
+    from { transform: translateX(-50%) scaleX(1);    opacity: 0.5; }
+    to   { transform: translateX(-50%) scaleX(1.25); opacity: 1;   }
+}
+
+/* Flames flicker: subtle scale + skew */
+@keyframes flicker {
+    from { transform: scaleX(1)    scaleY(1)    skewX(0deg);  opacity: 0.9; }
+    to   { transform: scaleX(0.82) scaleY(0.94) skewX(5deg);  opacity: 1;   }
+}
+
+@keyframes lidBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0);    }
+    45%, 55%  { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* Steam rises, fades, and drifts sideways for a natural wisp effect */
+@keyframes steamRise {
+    0%   { opacity: 0;   transform: translateY(0)     translateX(0px)  scaleX(1); }
+    15%  { opacity: 0.8; }
+    50%  { opacity: 0.5; transform: translateY(-42px) translateX(5px)  scaleX(1.3); }
+    100% { opacity: 0;   transform: translateY(-90px) translateX(-4px) scaleX(0.7); }
+}
+
+/* Soup surface breathes gently */
+@keyframes soupRipple {
+    0%, 100% { transform: translateX(-50%) scaleX(1);    }
+    50%       { transform: translateX(-50%) scaleX(0.96); }
+}
+
+/* Spoon swings ±30° over the pot opening */
+@keyframes spoonSwing {
+    0%, 100% { transform: rotate(-30deg); }
+    50%       { transform: rotate(30deg);  }
+}
+
+/* =============================================
+   MEDIA QUERIES — Responsive Layout
+============================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    #hero {
+        padding: 110px 16px 52px;
+    }
+
+    .hero-img {
+        height: 150px;
+        width: 115px;
+    }
+
+    .hero-img-mid {
+        transform: translateY(-10px);
+    }
+
+    section {
+        padding: 64px 18px;
+    }
+
+    .hobbies-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cooking-scene {
+        width: 180px;
+        height: 220px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-images {
+        gap: 10px;
+    }
+
+    .hero-img {
+        height: 120px;
+        width: 95px;
+    }
+
+    .hero-img-mid {
+        transform: none;
+    }
+
+    .hero-img-mid:hover {
+        transform: scale(1.07);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline {
+        padding-left: 22px;
+    }
+
+    .timeline-dot {
+        left: -28px;
+    }
+
+    #back-to-top {
+        bottom: 20px;
+        right: 18px;
+    }
+}
+
+/* =============================================
+   ACCESSIBILITY — Respect reduced-motion preference
+   Best practice: disable animations for users
+   who prefer reduced motion.
+============================================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

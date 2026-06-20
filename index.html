@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Kfir Hadad — Data Analyst, Product Manager, and Full Stack Developer.">
+    <title>Kfir Hadad</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts: Inter (body) · Space Grotesk (headings) · Dancing Script (hero name) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Skip-to-content link (accessibility best practice) -->
+    <a href="#about" class="skip-link">Skip to main content</a>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Back to top">KH</a>
+            <ul class="nav-links" role="list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" aria-label="Introduction">
+        <div class="hero-content">
+            <h1 class="hero-name">Kfir Hadad</h1>
+            <p class="hero-subtitle">Data Analyst &nbsp;·&nbsp; Product Manager &nbsp;·&nbsp; Full Stack Developer</p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">About Me</a>
+                <a href="#contact" class="btn btn-outline">Contact</a>
+            </div>
+        </div>
+        <div class="hero-images">
+            <!-- Hero images are above the fold — no lazy loading -->
+            <img src="./images/img1.jpg"  alt="Profile photo of Kfir Hadad" class="hero-img">
+            <img src="./images/img2.jpeg" alt="Profile photo of Kfir Hadad" class="hero-img hero-img-mid">
+            <img src="./images/img3.jpeg" alt="Profile photo of Kfir Hadad" class="hero-img">
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" aria-label="About me">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="about-content reveal" style="--delay: 0.15s">
+            <p>I am a data-driven Industrial Engineering &amp; Management graduate (B.Sc.) dedicated to transforming
+                complex datasets into actionable product insights. My approach combines analytical rigor with a
+                technical toolkit featuring SQL, Python, and Power BI to optimize performance and drive strategic
+                value.</p>
+            <p>As an Intelligence Officer (Reserve Duty), I led an automation initiative that reduced profiling time
+                by 90% by building custom pipelines to process large-scale intelligence data. From designing NLP
+                extraction pipelines to developing information systems, I have a proven track record of bridging the
+                gap between technical complexity and stakeholder requirements. I am also highly proficient in
+                leveraging LLMs (GPT, Gemini, Claude) and n8n to design intelligent agents and AI-assisted
+                workflows.</p>
+            <p>I am now seeking my next challenge in Data Analysis, Technical Project Management, or Associate
+                Product Management (APM). I bring a unique mix of Full Stack development experience, simulation
+                modeling, and a hunger for solving ambiguous, high-stakes problems in fast-paced environments.</p>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" aria-label="Skills">
+        <h2 class="section-title reveal">Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-card reveal" style="--delay: 0s">
+                <div class="skill-header">
+                    <span class="skill-name">Web Development</span>
+                    <span class="skill-level">5 / 5</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 100%"></div></div>
+            </div>
+            <div class="skill-card reveal" style="--delay: 0.1s">
+                <div class="skill-header">
+                    <span class="skill-name">Big Data</span>
+                    <span class="skill-level">4 / 5</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 80%"></div></div>
+            </div>
+            <div class="skill-card reveal" style="--delay: 0.2s">
+                <div class="skill-header">
+                    <span class="skill-name">Research Skills</span>
+                    <span class="skill-level">4 / 5</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 80%"></div></div>
+            </div>
+            <div class="skill-card reveal" style="--delay: 0.3s">
+                <div class="skill-header">
+                    <span class="skill-name">Analytical Techniques</span>
+                    <span class="skill-level">3 / 5</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="--fill: 60%"></div></div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title reveal" style="--delay: 0.1s">Languages</h3>
+        <div class="languages-row">
+            <div class="language-card reveal" style="--delay: 0.1s">
+                <span class="language-name">Hebrew</span>
+                <span class="language-level">Native</span>
+            </div>
+            <div class="language-card reveal" style="--delay: 0.2s">
+                <span class="language-name">English</span>
+                <span class="language-level">Professional</span>
+            </div>
+            <div class="language-card reveal" style="--delay: 0.3s">
+                <span class="language-name">Arabic</span>
+                <span class="language-level">Professional</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" aria-label="Work experience">
+        <h2 class="section-title reveal">Experience</h2>
+        <div class="timeline">
+
+            <div class="timeline-item reveal" style="--delay: 0.05s">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Investigations Specialist</h3>
+                    <span class="timeline-org">Israel Defense Forces</span>
+                    <span class="timeline-date">October 2023 – August 2025</span>
+                    <ul>
+                        <li>Led an automation project reducing intelligence case profiling time by ~90%.</li>
+                        <li>Built SQL queries and Python pipelines to process large-scale intelligence datasets.</li>
+                        <li>Created BI dashboards presenting key metrics and insights for decision-makers.</li>
+                        <li>Implemented analytical tools across a team of 12 analysts under time-sensitive conditions.</li>
+                        <li>Translated stakeholder requirements into data-driven insights supporting strategic decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" style="--delay: 0.15s">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Security Guard</h3>
+                    <span class="timeline-org">Meta</span>
+                    <span class="timeline-date">May 2021 – June 2022</span>
+                    <ul>
+                        <li>Ensured physical security of a high-tech corporate facility, adhering to safety and
+                            confidentiality protocols.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal" style="--delay: 0.25s">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Signal Intelligence Analyst</h3>
+                    <span class="timeline-org">Israel Defense Forces</span>
+                    <span class="timeline-date">September 2018 – May 2021</span>
+                    <ul>
+                        <li>Performed large-scale data mining and SQL analysis to extract intelligence insights from Big Data.</li>
+                        <li>Translated unstructured data into actionable intelligence outputs for senior consumers.</li>
+                        <li>Utilized data mining, knowledge management, and operational intelligence systems.</li>
+                        <li>Applied analytical creativity to solve complex, ambiguous intelligence problems.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" aria-label="Education">
+        <h2 class="section-title reveal">Education</h2>
+        <div class="education-grid">
+            <div class="education-card reveal" style="--delay: 0s">
+                <div class="edu-icon">🎓</div>
+                <h3>B.Sc. Industrial Engineering &amp; Management</h3>
+                <p class="edu-school">Ben Gurion University</p>
+                <p class="edu-date">2022 – 2026</p>
+            </div>
+            <div class="education-card reveal" style="--delay: 0.15s">
+                <div class="edu-icon">💻</div>
+                <h3>Diploma in Fullstack Development</h3>
+                <p class="edu-school">Coding Bootcamp</p>
+                <p class="edu-date">2021 – 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== HOBBIES ===== -->
+    <section id="hobbies" aria-label="Hobbies">
+        <h2 class="section-title reveal">Hobbies</h2>
+        <div class="hobbies-container">
+            <div class="hobbies-list">
+                <div class="hobby-item reveal" style="--delay: 0s">📚&nbsp; Reading technical books and articles</div>
+                <div class="hobby-item reveal" style="--delay: 0.1s">♟️&nbsp; Playing chess</div>
+                <div class="hobby-item reveal" style="--delay: 0.2s">🔬&nbsp; Exploring new technologies and programming languages</div>
+                <div class="hobby-item reveal" style="--delay: 0.3s">✈️&nbsp; Traveling and experiencing new cultures</div>
+                <div class="hobby-item reveal" style="--delay: 0.4s">🍳&nbsp; Cooking and trying out new recipes</div>
+            </div>
+            <!-- Pure CSS cooking animation — no image required -->
+            <div class="cooking-scene reveal" style="--delay: 0.2s" role="img" aria-label="Cooking animation">
+                <!-- Flames (z:3, side flames visible outside pot width) -->
+                <div class="flame f1"></div>
+                <div class="flame f2"></div>
+                <div class="flame f3"></div>
+                <div class="flame f4"></div>
+                <!-- Stove surface (z:2) -->
+                <div class="stove"></div>
+                <!-- Soup fill — narrower than pot, appears as interior (z:5 > pot-body z:4) -->
+                <div class="soup-body"></div>
+                <!-- Pot walls (z:4, wider than soup-body so sides are visible around it) -->
+                <div class="pot-body"></div>
+                <div class="pot-handle ph-left"></div>
+                <div class="pot-handle ph-right"></div>
+                <!-- Soup surface oval at pot opening (z:7) -->
+                <div class="soup-surface"></div>
+                <!-- White steam wisps (z:9) -->
+                <div class="steam s1"></div>
+                <div class="steam s2"></div>
+                <div class="steam s3"></div>
+                <!-- Spoon (z:10) -->
+                <div class="spoon-wrap">
+                    <div class="spoon-stick"></div>
+                    <div class="spoon-bowl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" aria-label="Contact information">
+        <h2 class="section-title reveal">Contact Me</h2>
+        <div class="contact-grid">
+            <a href="mailto:kfirhadad8@gmail.com" class="contact-card reveal" style="--delay: 0s">
+                <span class="contact-icon">✉️</span>
+                <span>kfirhadad8@gmail.com</span>
+            </a>
+            <div class="contact-card reveal" style="--delay: 0.1s">
+                <span class="contact-icon">📞</span>
+                <span>+972-52-305-5501</span>
+            </div>
+            <a href="https://www.linkedin.com/in/kfir-hadad" target="_blank" rel="noopener noreferrer" class="contact-card reveal" style="--delay: 0.2s">
+                <span class="contact-icon">💼</span>
+                <span>LinkedIn Profile</span>
+            </a>
+            <a href="https://github.com/kfirhadad" target="_blank" rel="noopener noreferrer" class="contact-card reveal" style="--delay: 0.3s">
+                <span class="contact-icon">🐙</span>
+                <span>GitHub Profile</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <p>&copy; Kfir Hadad. All rights reserved.</p>
+    </footer>
+
+    <!-- Back-to-top button -->
+    <button id="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- ===================================================
+         JavaScript — Best Practice Features:
+         1. Intersection Observer for scroll-reveal
+         2. Active nav link tracking
+         3. Back-to-top button visibility
+    ==================================================== -->
+    <script>
+        // ----- 1. Scroll-Reveal via Intersection Observer -----
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Unobserve after reveal so it won't re-trigger
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ----- 2. Active Nav Link (highlight current section) -----
+        const sections   = document.querySelectorAll('section[id]');
+        const navLinks   = document.querySelectorAll('.nav-links a');
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    const activeLink = document.querySelector(
+                        `.nav-links a[href="#${entry.target.id}"]`
+                    );
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach(section => navObserver.observe(section));
+
+        // ----- 3. Back-to-Top Button -----
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

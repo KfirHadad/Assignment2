@@ -453,7 +453,7 @@ section {
     background-color: var(--accent);
     border-radius: 50%;
     border: 3px solid var(--bg-primary);
-    animation: pulse 2.4s ease-in-out infinite;
+    animation: pulse 1.6s ease-in-out infinite;
 }
 
 .timeline-content h3 {
@@ -967,8 +967,8 @@ section {
 
 /* Spoon swings ±30° over the pot opening */
 @keyframes spoonSwing {
-    0%, 100% { transform: rotate(-30deg); }
-    50%       { transform: rotate(30deg);  }
+    0%, 100% { transform: rotate(-15deg); }
+    50%       { transform: rotate(15deg);  }
 }
 
 /* =============================================
